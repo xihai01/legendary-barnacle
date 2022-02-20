@@ -2,6 +2,7 @@
 const { assert } = require("chai");
 const { getStoryData } = require("../getStoryData");
 const { parseSentence } = require("../parseSentence");
+const { compareSentence } = require("../compareSentence");
 
 const path = "./test/sample1.txt";
 const mock = {
@@ -50,5 +51,35 @@ describe("array with sentences", () => {
       .catch((err) => {
         done(err);
       });
+  });
+});
+
+describe("compare two simple sentences", () => {
+  it("should compare two easy sentences", () => {
+    // dut === compare sentences
+    // input === current sentence, greatest sentence
+    // output === true || false
+    const string1 =
+      "Information gathered through assessment helps teachers to determine students’ strengths and weaknesses in their achievement of the curriculum expectations.";
+    const string2 =
+      "As they are enrolled in a University Preparation level course, students of MCR3U can expect a majority of evaluations to be in test form.";
+    // return true if string1 > string2
+    assert.strictEqual(compareSentence(string1, string2), true);
+    // return false if string1 < string2
+    assert.strictEqual(compareSentence(string2, string1), false);
+  });
+
+  it("should compare two slightly complex sentences", () => {
+    // dut === compare sentences
+    // input === current sentence, greatest sentence
+    // output === true || false
+    const string1 =
+      "Ast hey gathered through assessment helps teachers to determine students’ strengths and weaknesses in their achievement of the curriculum expectations.";
+    const string2 =
+      "As they are enrolled in a University Preparation level course, students of MCR3U can expect a majority of evaluations to be in test form.";
+    // return true if string1 > string2
+    assert.strictEqual(compareSentence(string1, string2), true);
+    // return false if string1 < string2
+    assert.strictEqual(compareSentence(string2, string1), false);
   });
 });
