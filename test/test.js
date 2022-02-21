@@ -22,10 +22,10 @@ const mock = {
       "\rTest in this instance refers to evaluative tools designed to assess the pupils' ability to think mathematically and to explain their thinking, with an emphasis on 'explaining why', rather than just 'knowing how'.",
     ],
     2: [
-      '\rThe stars and Galaxies died and snuffed out, and space grew black after ten trillion years of running down.',
+      "\rThe stars and Galaxies died and snuffed out, and space grew black after ten trillion years of running down.",
       "\rOne by one Man fused with AC, each physical body losing its mental identity in a manner that was somehow not a loss but a gain.",
       "\rMan's last mind paused before fusion, looking over a space that included nothing but the dregs of one last dark star and nothing besides but incredibly thin matter, agitated randomly by the tag ends of heat wearing out, asymptotically, to the absolute zero.",
-      '\rMan said, AC, is this the end?',
+      "\rMan said, AC, is this the end?",
       "\rCan this chaos not be reversed into the Universe once more?",
       "\rCan that not be done?",
       `\rAC said, THERE IS AS YET INSUFFICIENT DATA FOR A MEANINGFUL ANSWER.`,
@@ -97,7 +97,7 @@ describe("array with sentences", () => {
   });
 });
 
-describe("compare two simple sentences", () => {
+describe("compare two sentences", () => {
   it("should compare two easy sentences", () => {
     // dut === compare sentences
     // input === current sentence, greatest sentence
@@ -123,6 +123,15 @@ describe("compare two simple sentences", () => {
     // return true if string1 > string2
     assert.strictEqual(compareSentence(string1, string2), true);
     // return false if string1 < string2
+    assert.strictEqual(compareSentence(string2, string1), false);
+  });
+
+  it("should compare two complex sentences with special letters", () => {
+    const string1 =
+      "Man's last mind paused before fusion, looking over a space that included nothing but the dregs of one last dark star and nothing besides but incredibly thin matter, agitated randomly by the tag ends of heat wearing out, asymptotically, to the absolute zero.";
+    const string2 =
+      "Man's last mind fused and only AC existed -- and that in hyperspace.";
+    assert.strictEqual(compareSentence(string1, string2), true);
     assert.strictEqual(compareSentence(string2, string1), false);
   });
 });
