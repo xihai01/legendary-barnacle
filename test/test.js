@@ -3,6 +3,7 @@ const { assert } = require("chai");
 const { getStoryData } = require("../getStoryData");
 const { parseSentence } = require("../parseSentence");
 const { compareSentence } = require("../compareSentence");
+const { sort } = require("../sort");
 
 const path = "./test/sample1.txt";
 const mock = {
@@ -103,7 +104,8 @@ describe("sort sentences alphabetically", () => {
     getStoryData(path)
       .then((data) => {
         assert.isOk("Data successfully loaded");
-        const result = sort(data);
+        const parsed = parseSentence(data);
+        const result = sort(parsed);
         assert.isArray(result);
         assert.deepEqual(mock.sortedStory[1], result);
         done();
