@@ -4,7 +4,7 @@ const { getStoryData } = require("../getStoryData");
 const { parseSentence } = require("../parseSentence");
 const { compareSentence } = require("../compareSentence");
 const { sort } = require("../sort");
-
+// /-{5,}/gm
 // easy story to test
 const path = "./test/sample1.txt";
 // complex story to test
