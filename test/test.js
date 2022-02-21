@@ -17,6 +17,17 @@ const mock = {
       "\nTest in this instance refers to evaluative tools designed to assess the pupils' ability to think mathematically and to explain their thinking, with an emphasis on 'explaining why', rather than just 'knowing how'.",
     ],
   },
+  sortedStory: {
+    1: [
+      "\nAll assessments and evaluations will be related to the learning activities used, correspond to the purposes of instruction, match the needs and experiences of the students, and be fair to all students.",
+      "\nAssessments and evaluations are varied in nature, administered over a period of time, and designed to provide opportunities for students to demonstrate the full range of their learning.",
+      "\nAs they are enrolled in a University Preparation level course, students of MCR3U can expect a majority of evaluations to be in test form.",
+      "\nEvaluation refers to the process of judging the quality of student work on the basis of established criteria, and assigning a value to represent that quality.",
+      "\nInformation gathered through assessment helps teachers to determine students’ strengths and weaknesses in their achievement of the curriculum expectations.",
+      "\nTest in this instance refers to evaluative tools designed to assess the pupils' ability to think mathematically and to explain their thinking, with an emphasis on 'explaining why', rather than just 'knowing how'.",
+      "The primary purpose of assessment and evaluation is to improve student learning.",
+    ],
+  },
 };
 
 describe("read from file", () => {
@@ -81,5 +92,24 @@ describe("compare two simple sentences", () => {
     assert.strictEqual(compareSentence(string1, string2), true);
     // return false if string1 < string2
     assert.strictEqual(compareSentence(string2, string1), false);
+  });
+});
+
+describe("sort sentences alphabetically", () => {
+  it("should sort a simple sotry alphabetically", (done) => {
+    // dut === sort
+    // input === data (array)
+    // output === sorted data (array for now)
+    getStoryData(path)
+      .then((data) => {
+        assert.isOk("Data successfully loaded");
+        const result = sort(data);
+        assert.isArray(result);
+        assert.deepEqual(mock.sortedStory[1], result);
+        done();
+      })
+      .catch((err) => {
+        done(err);
+      });
   });
 });
