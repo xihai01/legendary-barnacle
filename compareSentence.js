@@ -2,7 +2,7 @@ const { filterLetters } = require("./helpers/filterLetters");
 
 // compare two sentences
 const compareSentence = function (string1, string2) {
-  // remove any special characters such as spaces
+  // remove any special characters such as spaces, ., !, ?, -, '
   const sentence1 = filterLetters(string1);
   const sentence2 = filterLetters(string2);
 

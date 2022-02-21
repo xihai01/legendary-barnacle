@@ -6,13 +6,19 @@ const parseSentence = function (data) {
   let sentence = "";
   // loop through each sentence
   for (let i = 0; i < story.length; i++) {
-    sentence += story[i];
+    // remove double quotes
+    if (story[i] !== '"') {
+      sentence += story[i];
+    }
     // sentence terminating characters
-    if (story[i] === ".") {
-      output.push(sentence);
+    if (story[i] === "." || story[i] === "?" || story[i] === "!") {
+      // remove any trailing whitepsaces; start new sentence on a newline
+      output.push("\r" + sentence.trim());
       sentence = "";
     }
   }
+
+  console.log(output);
   return output;
 };
 
