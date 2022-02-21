@@ -42,6 +42,16 @@ const mock = {
       "\rTest in this instance refers to evaluative tools designed to assess the pupils' ability to think mathematically and to explain their thinking, with an emphasis on 'explaining why', rather than just 'knowing how'.",
       "\rThe primary purpose of assessment and evaluation is to improve student learning.",
     ],
+    2: [
+      "\rAC said, THERE IS AS YET INSUFFICIENT DATA FOR A MEANINGFUL ANSWER.",
+      "\rCan that not be done?",
+      "\rCan this chaos not be reversed into the Universe once more?",
+      "\rMan said, AC, is this the end?",
+      "\rMan's last mind fused and only AC existed -- and that in hyperspace.",
+      "\rMan's last mind paused before fusion, looking over a space that included nothing but the dregs of one last dark star and nothing besides but incredibly thin matter, agitated randomly by the tag ends of heat wearing out, asymptotically, to the absolute zero.",
+      "\rOne by one Man fused with AC, each physical body losing its mental identity in a manner that was somehow not a loss but a gain.",
+      "\rThe stars and Galaxies died and snuffed out, and space grew black after ten trillion years of running down.",
+    ],
   },
 };
 
@@ -137,7 +147,7 @@ describe("compare two sentences", () => {
 });
 
 describe("sort sentences alphabetically", () => {
-  it("should sort a simple sotry alphabetically", (done) => {
+  it("should sort a simple passage alphabetically", (done) => {
     // dut === sort
     // input === data (array)
     // output === sorted data (array for now)
@@ -148,6 +158,24 @@ describe("sort sentences alphabetically", () => {
         const result = sort(parsed);
         assert.isArray(result);
         assert.deepEqual(mock.sortedStory[1], result);
+        done();
+      })
+      .catch((err) => {
+        done(err);
+      });
+  });
+
+  it("should sort a complex passage alphabetically", (done) => {
+    // dut === sort
+    // input === data (array)
+    // output === sorted data (array for now)
+    getStoryData(path2)
+      .then((data) => {
+        assert.isOk("Data successfully loaded");
+        const parsed = parseSentence(data);
+        const result = sort(parsed);
+        assert.isArray(result);
+        assert.deepEqual(mock.sortedStory[2], result);
         done();
       })
       .catch((err) => {
