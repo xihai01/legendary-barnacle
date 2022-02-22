@@ -1,6 +1,6 @@
 //import functions to test
 const { assert } = require("chai");
-const { getStoryData } = require("../getStoryData");
+const { getStoryData } = require("../fileOperations");
 const { parseSentence } = require("../parseSentence");
 const { compareSentence } = require("../compareSentence");
 const { sort } = require("../sort");
