@@ -1,10 +1,11 @@
 // helper functions
-import { getStoryData } from "./fileOperations";
-import { parseSentence } from "./parseSentence";
-import { sort } from "./sort";
+const { getStoryData, writeStoryData } = require("./fileOperations");
+const { parseSentence } = require("./parseSentence");
+const { sort } = require("./sort");
 
 // load path to .txt
 const path = "./data/ShortStory.txt";
+const result = "./data/result/ShortStory.txt";
 
 const index = function (path) {
   // read .txt
@@ -15,9 +16,12 @@ const index = function (path) {
       // sort alphabetically
       const sortedData = sort(parsedData);
       // write to file
+      writeStoryData(result, sortedData.join(""));
     })
     .catch((error) => {
       console.log("Error occured", error);
     });
-  return null;
 };
+
+// program starts
+index(path);
