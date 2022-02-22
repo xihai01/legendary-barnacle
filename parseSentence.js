@@ -1,7 +1,9 @@
 // store sentences in array
 const parseSentence = function (data) {
+  // remove the "-----" seperators
+  const regex = /-{5,}/gm;
   // remove any trailing whitespaces
-  const story = data.trim();
+  const story = data.trim().replace(regex, "");
   const output = [];
   let sentence = "";
   // loop through each sentence

@@ -4,11 +4,13 @@ const { getStoryData } = require("../getStoryData");
 const { parseSentence } = require("../parseSentence");
 const { compareSentence } = require("../compareSentence");
 const { sort } = require("../sort");
-// /-{5,}/gm
+
 // easy story to test
 const path = "./test/sample1.txt";
 // complex story to test
 const path2 = "./test/sample2.txt";
+// story with two passages separated by -------
+const path3 = "./test/sample3.txt";
 
 const mock = {
   story: {
@@ -30,6 +32,12 @@ const mock = {
       "\rCan that not be done?",
       `\rAC said, THERE IS AS YET INSUFFICIENT DATA FOR A MEANINGFUL ANSWER.`,
       `\rMan's last mind fused and only AC existed -- and that in hyperspace.`,
+    ],
+    3: [
+      "\rI like pineapples on pizza.",
+      "\rMe too, it's very delicious.",
+      "\rFind and fiz application security bugs with every release.",
+      "\rKaakaww!",
     ],
   },
   sortedStory: {
@@ -99,6 +107,23 @@ describe("array with sentences", () => {
         const result = parseSentence(data);
         assert.isArray(result);
         assert.deepEqual(mock.story[2], result);
+        done();
+      })
+      .catch((err) => {
+        done(err);
+      });
+  });
+
+  it("should parse two passages seperated with ------", (done) => {
+    // dut === parser
+    // input === data
+    // output === array of sentences
+    getStoryData(path3)
+      .then((data) => {
+        assert.isOk("Data successfully loaded");
+        const result = parseSentence(data);
+        assert.isArray(result);
+        assert.deepEqual(mock.story[3], result);
         done();
       })
       .catch((err) => {
