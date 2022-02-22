@@ -1,7 +1,7 @@
 // helper functions
-const { getStoryData, writeStoryData } = require("./fileOperations");
-const { parseSentence } = require("./parseSentence");
-const { sort } = require("./sort");
+const { getStoryData, writeStoryData } = require("./helpers/fileOperations");
+const { parseSentence } = require("./helpers/parseSentence");
+const { sort } = require("./helpers/sort");
 
 // load path to .txt
 const path = "./data/ShortStory.txt";

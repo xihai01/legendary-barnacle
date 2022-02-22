@@ -1,9 +1,9 @@
 //import functions to test
 const { assert } = require("chai");
-const { getStoryData } = require("../fileOperations");
-const { parseSentence } = require("../parseSentence");
-const { compareSentence } = require("../compareSentence");
-const { sort } = require("../sort");
+const { getStoryData } = require("../helpers/fileOperations");
+const { parseSentence } = require("../helpers/parseSentence");
+const { compareSentence } = require("../helpers/compareSentence");
+const { sort } = require("../helpers/sort");
 const { mock } = require("./mock/mockData");
 
 // easy story to test

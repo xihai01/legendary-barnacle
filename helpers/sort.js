@@ -20,7 +20,6 @@ const sort = function (data) {
     output[highest] = temp;
   }
 
-  console.log(output);
   return output;
 };
 

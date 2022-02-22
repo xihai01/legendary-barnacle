@@ -1,4 +1,4 @@
-const { filterLetters } = require("./helpers/filterLetters");
+const { filterLetters } = require("./filterLetters");
 
 // compare two sentences
 const compareSentence = function (string1, string2) {

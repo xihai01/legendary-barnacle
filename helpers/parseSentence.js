@@ -20,7 +20,6 @@ const parseSentence = function (data) {
     }
   }
 
-  console.log(output);
   return output;
 };
 
