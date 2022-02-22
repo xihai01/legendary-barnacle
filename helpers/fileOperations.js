@@ -19,7 +19,9 @@ const writeStoryData = function (path, content) {
       console.log("Error occured writing to file", err);
       return;
     }
-    console.log("File written successfully!");
+    console.log(
+      "File written successfully! Check data/result folder for output."
+    );
     return;
   });
 };
