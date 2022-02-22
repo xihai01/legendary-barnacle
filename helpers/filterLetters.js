@@ -9,12 +9,20 @@ const filterLetters = function (string) {
     "-": true,
     "'": true,
     ",": true,
+    "(": true,
+    ")": true,
+    "\r": true,
+    "\n": true,
   };
   const sentence = [];
 
+  // when making comparisons, compare uppercase
+
   for (let i = 0; i < string.length; i++) {
     if (!filter[string[i]]) {
-      sentence.push(string[i]);
+      // captalize letter
+      const letter = string[i];
+      sentence.push(letter.toUpperCase());
     }
   }
 
