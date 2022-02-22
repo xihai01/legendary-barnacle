@@ -8,7 +8,7 @@ const parseSentence = function (data) {
   let sentence = "";
   // loop through each sentence
   for (let i = 0; i < story.length; i++) {
-    // remove double quotes and isngle quotes
+    // remove double quotes
     if (story[i] !== '"') {
       sentence += story[i];
     }
