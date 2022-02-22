@@ -9,11 +9,12 @@ const sort = function (data) {
     // keep track of sentence that is highest in alphabetical order
     let highest = 0;
     for (let i = 1; i <= top; i++) {
+      // output[i] > output[highest]
       if (compareSentence(output[i], output[highest])) {
         highest = i;
       }
     }
-    // place highest sentence at end
+    // place highest sentence at end of array
     const temp = output[top];
     output[top] = output[highest];
     output[highest] = temp;
