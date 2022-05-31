@@ -11,9 +11,9 @@ const index = function (path) {
   // read .txt
   getStoryData(path)
     .then((data) => {
-      // parse the data
+      // parse the sentences into an array
       const parsedData = parseSentence(data);
-      // sort alphabetically
+      // sort the sentences alphabetically
       const sortedData = sort(parsedData);
       // write to file
       writeStoryData(result, sortedData.join(""));

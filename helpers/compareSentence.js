@@ -1,6 +1,15 @@
 const { filterLetters } = require("./filterLetters");
 
-// compare two sentences
+/**
+ * compare two sentences
+ *
+ * return true if string1 >= string2
+ * 
+ * return false if string1 < string2
+ * @param {string} string1
+ * @param {string} string2
+ * @returns boolean
+ */
 const compareSentence = function (string1, string2) {
   // remove any special characters such as spaces, ., !, ?, -, '
   const sentence1 = filterLetters(string1);

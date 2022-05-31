@@ -1,6 +1,10 @@
 const { compareSentence } = require("./compareSentence");
 
-// selection sort implementation
+/**
+ * sorts each sentence in array using selection sort
+ * @param {[]} data
+ * @returns array of sorted sentences
+ */
 const sort = function (data) {
   // make a copy of the data
   const output = [...data];
@@ -9,7 +13,7 @@ const sort = function (data) {
     // keep track of sentence that is highest in alphabetical order
     let highest = 0;
     for (let i = 1; i <= top; i++) {
-      // output[i] > output[highest]
+      // the index of sentence with highest alphabetical order is recorded
       if (compareSentence(output[i], output[highest])) {
         highest = i;
       }

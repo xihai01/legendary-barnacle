@@ -1,4 +1,8 @@
-// filter any special letters in sentences
+/**
+ * filter any special letters in sentences
+ * @param {string} string
+ * @returns
+ */
 const filterLetters = function (string) {
   // remove any special characters in obj
   const filter = {
@@ -16,12 +20,11 @@ const filterLetters = function (string) {
   };
   const sentence = [];
 
-  // when making comparisons, compare uppercase
-
   for (let i = 0; i < string.length; i++) {
     if (!filter[string[i]]) {
       // captalize letter
       const letter = string[i];
+      // when making comparisons, compare uppercase
       sentence.push(letter.toUpperCase());
     }
   }

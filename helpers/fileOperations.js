@@ -1,6 +1,10 @@
 const fs = require("fs");
 
-// read contents of file
+/**
+ * read contents of file
+ * @param {*} path
+ * @returns data or error
+ */
 async function getStoryData(path) {
   return new Promise((resolve, reject) => {
     fs.readFile(path, "utf8", (err, data) => {
@@ -12,7 +16,11 @@ async function getStoryData(path) {
   });
 }
 
-// write contents of file
+/**
+ * write contents to file path
+ * @param {*} path
+ * @param {*} content
+ */
 const writeStoryData = function (path, content) {
   fs.writeFile(path, content, (err) => {
     if (err) {

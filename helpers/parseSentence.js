@@ -1,4 +1,8 @@
-// store sentences in array
+/**
+ * store each sentence from story into an array
+ * @param {string} data
+ * @returns array of sentences
+ */
 const parseSentence = function (data) {
   // remove the "-----" seperators
   const regex = /-{5,}/gm;

@@ -1,5 +1,5 @@
 # Sorting Sentences Alphabetically
-This is a small tech assesment for a software position. This program takes in a short story .txt file, sorts the sentences alphabetically, and writes the output to a new .txt.
+This small program takes in a short story .txt file, sorts the sentences alphabetically, and writes the output to a new .txt. The purpose of this project was to gain more practice using a variety of concepts in JavaScript and Computer Science such as file I/O, sorting, automated testing, and running async code.
 
 I assumed a sentence in this case ends with [., ! or ?]
 
